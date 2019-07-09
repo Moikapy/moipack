@@ -26,7 +26,7 @@ export default {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'moi-vr',
+			title: 'pack',
 			template: path.join(__dirname, 'src/public/index.html')
 		}),
 		new ScriptExtHtmlWebpackPlugin({
