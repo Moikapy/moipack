@@ -1,6 +1,6 @@
 {
-	"name": "moipacl",
-	"version": "0.1.0",
+	"name": "moipack",
+	"version": "0.1.1",
 	"main": "src/main.js",
 	"license": "MIT",
 	"scripts": {

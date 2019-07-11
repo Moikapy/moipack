@@ -27,7 +27,7 @@ export default {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'pack',
-			template: path.join(__dirname, 'src/public/index.html')
+			template: path.join(__dirname, 'public/index.html')
 		}),
 		new ScriptExtHtmlWebpackPlugin({
 			defaultAttribute: 'defer'
