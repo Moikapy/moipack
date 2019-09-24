@@ -1,7 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
-import Port from './.moi/port'
+import Port from './.moi/port';
 export default {
 	entry: path.join(__dirname, 'src/main.js'),
 	output: {
@@ -40,8 +40,15 @@ export default {
 	devtool: 'source-map',
 	mode: 'development',
 	devServer: {
-		contentBase: './dist',
-		inline: true,
+		contentBase: path.join(__dirname, 'dist'),
+		inline: false,
+		hot: false,
+		// Enable polling
+		watchOptions: {
+			poll: 1000,
+			aggregateTimeout: 1000
+		},
+		allowedHosts: ['http://localhost:3030/', '172.17.0.1:3030'],
 		port: Port() //my prefered port for development, but change as you see fit
 	}
 };

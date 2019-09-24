@@ -1,5 +1,5 @@
 export default function Port() {
-	let port = 8080;
+	let port = 3030;
 	try {
 		return port;
 	} catch (e) {
