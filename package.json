@@ -6,7 +6,12 @@
 	"scripts": {
 		"watch": "webpack --watch",
 		"start": "webpack-dev-server --open",
-		"build": "webpack"
+		"build": "webpack",
+	        "build:docker": "docker-compose build",
+		"dev:docker":"docker-compose up dev",
+		"start:docker": "docker-compose up web nginx -d",
+		"end:docker": "docker-compose down",
+		"clean:docker": "docker system prune -f"
 	},
 	"dependencies": {
 		"bootstrap": "^4.3.1",
