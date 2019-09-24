@@ -1,6 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import Port from './.moi/port'
 export default {
 	entry: path.join(__dirname, 'src/main.js'),
 	output: {
@@ -41,6 +42,6 @@ export default {
 	devServer: {
 		contentBase: './dist',
 		inline: true,
-		port: 8085 //my prefered port for development, but change as you see fit
+		port: Port() //my prefered port for development, but change as you see fit
 	}
 };

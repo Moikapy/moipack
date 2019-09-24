@@ -7,9 +7,9 @@
 		"watch": "webpack --watch",
 		"dev": "webpack-dev-server --open",
 		"build": "webpack && babel .moi -d .moi/lib",
-		"start":"yarn build && node .moi/lib/server.js",
-	  "build:docker": "docker-compose build",
-		"dev:docker":"docker-compose up dev",
+		"start": "yarn build && node .moi/lib/server.js",
+		"build:docker": "docker-compose build",
+		"dev:docker": "docker-compose up dev",
 		"start:docker": "docker-compose up web nginx -d",
 		"end:docker": "docker-compose down",
 		"clean:docker": "docker system prune -f"

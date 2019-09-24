@@ -1,23 +1,24 @@
 version: '3'
-
 services:
   dev:
     build: .
-    command: yarn dev
+    command: bash -c "yarn && yarn dev"
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/usr/app/
+      - /usr/app/node_modules
+    working_dir: /usr/app
     ports:
-      - 8081:8081
+      - '8080:8080'
   web:
     build: .
     command: yarn start
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/usr/app/
+      - /usr/app/node_modules
+    working_dir: /usr/app
     ports:
-      - 8081:8081
- nginx:
+      - '3030:3030'
+  nginx:
     build: ./.moi/nginx-docker
     ports:
       - '80:80'
