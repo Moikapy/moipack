@@ -1,23 +1,25 @@
 {
 	"name": "moipack",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"main": "src/main.js",
 	"license": "MIT",
 	"scripts": {
 		"watch": "webpack --watch",
-		"start": "webpack-dev-server --open",
-		"build": "webpack",
-	        "build:docker": "docker-compose build",
+		"dev": "webpack-dev-server --open",
+		"build": "webpack && babel .moi -d .moi/lib",
+		"start":"yarn build && node .moi/lib/server.js",
+	  "build:docker": "docker-compose build",
 		"dev:docker":"docker-compose up dev",
 		"start:docker": "docker-compose up web nginx -d",
 		"end:docker": "docker-compose down",
 		"clean:docker": "docker system prune -f"
 	},
 	"dependencies": {
+		"@babel/polyfill": "^7.4.4",
 		"bootstrap": "^4.3.1",
 		"dotenv": "^8.0.0",
 		"jquery": "^3.4.1",
-		"lodash": "^4.17.11"
+		"lodash": "^4.17.13"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
@@ -32,6 +34,6 @@
 		"webpack": "^4.34.0",
 		"webpack-cli": "^3.3.4",
 		"webpack-dev-server": "^3.7.2",
-		"yarn": "^1.16.0"
+		"yarn": ">=1.16.0"
 	}
 }
